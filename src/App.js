@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Registration from './Components/Users/Registration'
+import Login from './Components/Users/Login'
+import HomePage from './Components/Home/HomePage'
+import UserKyc from './Components/Users/UserKyc/UserKyc'
+import UserPanel from './Pages/UserPanel'
+import Dashboard from './Pages/Dashboard'
+import TradeHistory from './Components/Users/TradeHistory'
+import TransactionHistory from './Components/Users/TransactionHistory'
+import Wallet from './Components/Users/Wallet/Wallet'
+import User from './Components/Admin/User'
+import Test from './Test'
+
+import { render } from "react-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Trade from './Pages/Trade'
+import BuyCoin from './Components/Users/Coindata/BuyCoin'
+import AdminPanel from './AdminPage/AdminPanel'
+import AllUsers from './Components/Admin/AllUsers'
+import Airdrop from './Components/Admin/Airdrop'
+import AddCustomCoin from './Components/Admin/AddCustomCoin'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    
+    <BrowserRouter>
+    <Routes>
+      
+      <Route exat path='/' element={<HomePage/>}/>
+      <Route exat path='/userpanel' element={<UserPanel/>}>
+      
+
+      <Route exact path="/userpanel/userkyc" element={<UserKyc/>}/>
+      
+      
+      <Route exact path="/userpanel/transactionhistory" element={<TransactionHistory/>}/>
+      <Route exact path="/userpanel/wallet" element={<Wallet/>}/>
+      <Route exact path="/userpanel/tradehistory" element={<TradeHistory/>}/>
+      <Route exact path="/userpanel/userdashboard" element={<Dashboard/>}/>
+    
+      
+      </Route>
+      <Route exact path="/Logout" element={<HomePage/>}/>
+      <Route exact path="/trade" element={<Trade/>}/>
+      <Route exact path="/registration" element={<Registration/>}/>
+      <Route exact path="/login" element={<Login/>}/>
+      <Route exact path="/testoy" element={<Test/>}/>
+      <Route exact path="/bycoin" element={<BuyCoin/>}/>
+     
+    </Routes>
+  </BrowserRouter>
+    
+    
+
+    
+    </>
+    
+    )
 }
 
-export default App;
+export default App

@@ -1,0 +1,15 @@
+div{
+    font-size: 12px;
+}
+.coinlist{
+    display: flex;
+    color: white;
+    /* color: rgba(0, 0, 0, 0.667); */
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.436);
+    cursor: pointer;
+   
+
+}
