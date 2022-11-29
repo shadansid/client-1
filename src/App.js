@@ -54,6 +54,16 @@ function App() {
       <Route exact path="/bycoin" element={<BuyCoin/>}/>
       <Route exact path="/vcode" element={<Vcode/>}/>
      
+
+
+      {/* admin routes */}
+      <Route exat path='/admin' element={<AdminPanel/>}>
+      <Route exat path='/admin/allusers' element={<AllUsers/>}/>
+      <Route exat path='/admin/airdrop' element={<Airdrop/>}/>
+      <Route exat path='/admin/addcoin' element={<AddCustomCoin/>}/>
+
+        </Route>
+
     </Routes>
   </BrowserRouter>
     
