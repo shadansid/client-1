@@ -14,7 +14,7 @@ const Main = () => {
  <div className="main" >
 
 
-<Container size='xl' sx={{height:'40vh', borderRadius:'31px', display:'flex', justifyContent:'center',alignItems:'center', background:`url("https://i.ibb.co/YtVdm7t/pink-7499159-960-720.jpg")`, backgroundSize:'cover' , backgroundPosition:'center' }} >
+<Container size='xl' sx={{height:'40vh', borderRadius:'31px', display:'flex', justifyContent:'center',alignItems:'center', background:`url("http://165.232.142.159:5000/static/images/bg/bg.jpg")`, backgroundSize:'cover' , backgroundPosition:'center' }} >
 
 <Container size='lg' >
 
