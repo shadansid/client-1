@@ -23,6 +23,7 @@ import AdminPanel from './AdminPage/AdminPanel'
 import AllUsers from './Components/Admin/AllUsers'
 import Airdrop from './Components/Admin/Airdrop'
 import AddCustomCoin from './Components/Admin/AddCustomCoin'
+import Vcode from './Components/Users/Vcode'
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/testoy" element={<Test/>}/>
       <Route exact path="/bycoin" element={<BuyCoin/>}/>
+      <Route exact path="/vcode" element={<Vcode/>}/>
      
     </Routes>
   </BrowserRouter>

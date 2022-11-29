@@ -5,6 +5,7 @@ import {LineChart,Tooltip,CartesianGrid,Line,XAxis} from 'recharts'
 import TransactionHistory from '../Components/Users/TransactionHistory'
 import TradeHistory from '../Components/Users/TradeHistory'
 import Wallet from '../Components/Users/Wallet/Wallet'
+import Showwallet from '../Components/Users/Wallet/Showwallet'
 
 const Dashboard = () => {
   
@@ -38,7 +39,7 @@ const Dashboard = () => {
            <Grid item  xs={6} >
            <Container style={{background:'white', height:'150px', borderRadius:'23px' }}>
                
-           <Wallet />
+           <Showwallet />
      
          
      
@@ -54,7 +55,7 @@ const Dashboard = () => {
      
            <Grid item  xs={6} >
            <Container style={{background:'white', height:'150px', borderRadius:'23px'}}>
-           {/* <TradeHistory/> */}
+           <TradeHistory/>
                </Container>
            </Grid>
      

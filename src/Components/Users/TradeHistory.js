@@ -1,26 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import {Typography} from '@mui/material'
 const TradeHistory =  () => {
   
   const [tradedata,settradedata]  = useState([])
 
- 
+  useEffect(()=>{
+    const url = "/showtrade";
+    axios.get(url, config)
+    .then(res=>{ console.log(res.data)
+    settradedata(res.data)
+    
+    })
+    .catch(err=> console.log(err))
+
+  },[])
+
+
   const config = {
     // headers:{
     //   "accessToken":sessionStorage.getItem('accessToken')
     // }
   }
  
-  const url = "/showtrade";
+  
   
 
 
-  axios.get(url, config)
-  .then(res=>{ console.log(res.data)
-  settradedata(res.data)
   
-  })
-  .catch(err=> console.log(err))
 
 
   
@@ -29,10 +36,10 @@ const TradeHistory =  () => {
     
    <>
    
-<h1>hello</h1>
+<div style={{padding:'20px'}}><Typography sx={{fontSize:'25px'}}>Trade History</Typography></div>
 
 
-{tradedata.map((ele)=>{
+{tradedata && tradedata.map((ele)=>{
 
 return <div style={{display:'flex', alignItems:'center', justifyContent:'space-around' , padding:'20px'}}>
 {/* {ele.type== 'credit'? :} */}

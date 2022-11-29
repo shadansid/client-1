@@ -29,14 +29,13 @@ const navi =  useNavigate()
 
 const redirect =()=>{
 
-  navi('/login')
+  navi('/vcode')
 }
 
 if(registered.status === 200){
 
-setTimeout(() => {
   redirect();
-}, 4000);
+
   
 
 }
@@ -69,7 +68,7 @@ fetch('/adduser', {
 })
   .then((response) => response.json())
   .then((json) =>{  setregister(json) 
-    sessionStorage.setItem("accessToken",json.accesstoken) 
+    // sessionStorage.setItem("accessToken",json.accesstoken) 
  
   });
 

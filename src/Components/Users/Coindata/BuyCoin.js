@@ -1,13 +1,14 @@
 import React from 'react';
 import './Css/buycoin.css'
+import { useState } from 'react';
 import axios from 'axios'
 import { TextField , InputAdornment} from '@mui/material';
 import {Container, Typography, Toolbar,IconButton, Button,Badge,Grid,Divider, Box, Slider} from '@mui/material'
 
 function BuyCoin({coins,coinChange}) {
   
-
-
+const [buyres, setBuyres] = useState();
+const [sellres, setSellres] = useState();
 
  const buy = ()=>{
   
@@ -30,7 +31,8 @@ let axiosConfig = {
 
 axios.post('/pay', postData, axiosConfig)
 .then((res) => {
-  console.log("RESPONSE RECEIVED: ", res);
+
+  setBuyres(res.data)
 })
 .catch((err) => {
   console.log("AXIOS ERROR: ", err);
@@ -65,7 +67,13 @@ fetch("/sellcoin", {
 .then(response => response.json())
 
 
-.then(json => console.log(json));
+.then(json => {
+  console.log(json)
+  setSellres(json)
+  
+
+
+});
 
 
 
@@ -108,6 +116,7 @@ fetch("/sellcoin", {
 <div>
 
 <Button onClick={buy} sx={{width:'180px'}} variant="contained">Buy</Button>
+<div>{buyres && buyres.msg}</div>
 </div>
         
         </div>
@@ -140,6 +149,7 @@ fetch("/sellcoin", {
 <div>
 
 <Button onClick={sell} sx={{width:'180px'}} variant="contained">Sell</Button>
+<div>{sellres && sellres.msg}</div>
 </div>
         
         </div>
