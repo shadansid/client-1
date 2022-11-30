@@ -47,7 +47,7 @@ const loginData = {
  
 
 
-fetch('/login', {
+fetch('http://165.232.142.159/api/login', {
   method: 'POST',
   body:JSON.stringify(loginData),
   headers: {

@@ -10,7 +10,7 @@ function CoinListBoxh({coins}) {
   const getdata = ()=>{
   
   
-  axios("/getcoin").then(res=>res.data).then((data)=>{
+  axios("http://165.232.142.159/api/getcoin").then(res=>res.data).then((data)=>{
 
     console.log(data)
     setcoin(data)
