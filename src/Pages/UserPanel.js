@@ -5,7 +5,7 @@ import UserHeader from '../Components/Users/UserHeader'
 import {
     Link, Outlet 
   } from "react-router-dom";
-import {Container, Typography, Toolbar,IconButton, Button,Badge , Grid} from '@mui/material'
+import {Container,Box, Typography, Toolbar,IconButton, Button,Badge , Grid} from '@mui/material'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Person4Icon from '@mui/icons-material/Person4';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
@@ -19,16 +19,28 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 const UserPanel = () => {
   
+const [isLoggedIn, setLogin] = useState(true);
+const [toggle, settoggle] = useState(false);
 
-  const [isLoggedIn, setLogin] = useState(true);
+const togglebtn = ()=>{
 
-  // useEffect(() => {
-  //     if (sessionStorage.getItem("accessToken") !== null) {
-  //       setLogin(true);
-  //     } else {
-  //       setLogin(false);
-  //     }
-  //   },[isLoggedIn]);
+if(toggle){
+  settoggle(false)
+}else{
+
+  settoggle(true)
+}
+
+}
+
+
+
+const hidetoggle = () =>{
+
+  settoggle(false);
+
+
+}
 
 
 
@@ -39,7 +51,7 @@ const UserPanel = () => {
  <div className="userpanel">
 
 
- <Container maxWidth="xl" style={{width:'300px', backgroundColor:'#F5F9FC', height:'100vh'}}>
+ <Container sx={{display:{xs:'none', sm:'block'}}} maxWidth="xl" style={{width:'300px', backgroundColor:'#F5F9FC', height:'100vh'}}>
    
 
    
@@ -113,6 +125,11 @@ const UserPanel = () => {
    </Container>
 
  </Container>
+
+ <Box sx={{display:{xs:'block', sm:'none' , position:'fixed' , bottom:0, height:'38px' , width:'100vh' ,zIndex:5 , display:'flex' , justifyContent:'center' , alignItems:'center' , backgroundColor:'#171B26'}}}>
+ this BCEX
+
+ </Box>
  </div> 
  </div> 
  }

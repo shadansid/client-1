@@ -1,16 +1,42 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Container, Typography, Toolbar,IconButton, Button,Badge,Box} from '@mui/material'
 import {} from '@mui/icons-material';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import ToggleButton from '@mui/material/ToggleButton';
+
+import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
 const UserHeader = () => {
+  const [toggle, settoggle] = useState(false);
+
+  const togglebtn = ()=>{
+  
+  if(toggle){
+    settoggle(false)
+  }else{
+  
+    settoggle(true)
+  }
+  
+  }
+  
+  
+  
+  const hidetoggle = () =>{
+  
+    settoggle(false);
+  
+  
+  }
+
+
 
     return (
 
 <>
 
 
-<Container maxWidth="xl" style={{backgroundColor:'#171B26'}}>
+<Container maxWidth="xl" style={{backgroundColor:'#171B26' }}>
 
   <Container maxWidth="xl">
 
@@ -24,7 +50,9 @@ const UserHeader = () => {
   '-webkit-text-fill-color': 'transparent'}}>
 Krypto
 </Typography> */}
-
+<ToggleButton onClick={togglebtn} value="justify" key="justify" style={{border:'none' , padding:'2px', marginTop:'5px'}} sx={{display:{xs:'block', sm:'none'}}}>
+      <FormatAlignJustifyIcon style={{color:'#2EC2CB'}} />
+    </ToggleButton>
 <Typography  style={{background: `linear-gradient(to right, #30CFD0 0%, #1F3F97 100%)`,
   '-webkit-background-clip': 'text',
   fontSize:'22px',

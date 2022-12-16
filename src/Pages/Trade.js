@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import CoinListBox from '../Components/Users/Coindata/CoinListBox'
 import Chart from '../Components/Users/Coindata/Chart'
 import BuyCoin from '../Components/Users/Coindata/BuyCoin'
@@ -12,6 +12,8 @@ import useContext from 'react'
 
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 
+import Context from '../hooks/useCoin'
+
 
 const Trade = () => {
   
@@ -24,21 +26,40 @@ const Trade = () => {
 
 
     }
+    const reducer = (state,action) => {
 
+        switch(action.type){
+    
+            case "update":
+                return action.payload
+            default:
+                throw new Error()
+        }
+    
+    
+    }
+    
+    const [state,dispatcher] = useReducer(reducer,"ETHUSDT")
   
+    
     return (
   
     <>
     <UserHeader/>
     <SingleCoin/>
+    <Context.Provider value={{
+        state:state,
+        dispatcher : dispatcher
+    }}>
     <div className="coinwrap">
 
     {/* 1250 */}
     <CoinData coins={coins} coinChange={handleCoinChange}/>
-    <AdvancedRealTimeChart style={{zIndex:-2}} height={714} width={window.innerWidth - 300}  symbol="ETHUSDT"   theme='dark' ></AdvancedRealTimeChart>
+    <AdvancedRealTimeChart style={{zIndex:-2}} height={714} width={window.innerWidth - 300}  symbol={state}   theme='dark'    hide_top_toolbar='true' hide_side_toolbar='true' container_id='chart' ></AdvancedRealTimeChart>
     </div>
     
     <BuyCoin coins={coins} coinChange={handleCoinChange}/>
+    </Context.Provider>
     <TradeHistory />
         </>
   

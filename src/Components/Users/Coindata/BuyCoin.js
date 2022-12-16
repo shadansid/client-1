@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Css/buycoin.css'
 import { useState } from 'react';
 import axios from 'axios'
 import { TextField , InputAdornment} from '@mui/material';
 import {Container, Typography, Toolbar,IconButton, Button,Badge,Grid,Divider, Box, Slider} from '@mui/material'
+import Context from '../../../hooks/useCoin';
 
 function BuyCoin({coins,coinChange}) {
   
 const [buyres, setBuyres] = useState();
 const [sellres, setSellres] = useState();
+const context = useContext(Context)
 
  const buy = ()=>{
   
@@ -17,7 +19,7 @@ console.log(buyamount)
 
 let postData = {
   amount: buyamount,
-  symbol: 'ethusdt'
+  symbol: context.state
 };
 
 let axiosConfig = {
@@ -54,7 +56,7 @@ fetch("/sellcoin", {
 
   body: JSON.stringify({
       amount: sellamount,
-      symbol: "ethusdt"
+      symbol: context.state
   }),
    
   // Adding headers to the request
@@ -92,15 +94,27 @@ fetch("/sellcoin", {
 
 <Container>
 <div>  
-<div style={{display:'flex', flexDirection:'column' ,padding:'50px', justifyContent:'center', alignItems:'center' , boxShadow:'1px 1px 18px -17px' , borderRadius:'23px' , backgroundColor:'white'}}>
-<TextField inputProps={{ inputMode: 'numeric' }}
-          label="Amount"
+<div style={{display:'flex', flexDirection:'column' ,padding:'50px', justifyContent:'start', alignItems:'center' , boxShadow:'1px 1px 18px -17px' , borderRadius:'23px' , backgroundColor:'white'}}>
+<div id="avbl" style={{display:'flex' , justifyContent:'flex-start',width: '25ch', height:'4vh'}}> <div style={{color:'#67686C'}}>Avbl :   </div></div>
+
+<TextField inputProps={{ inputMode: 'number' }} 
+          label={context.state}
+          id="buyamount"  color="primary"
+          sx={{ m: 1, width: '25ch', color:'#363c4e' }}
+          InputProps={{
+            startAdornment: <InputAdornment  position="start"><div style={{color:'#363c4e'}}></div> $</InputAdornment>,
+          }}
+        />
+      <TextField inputProps={{ readonly: true }}
+          label="Amount"  value={'--'}
           id="buyamount"
           sx={{ m: 1, width: '25ch' }}
           InputProps={{
-            startAdornment: <InputAdornment position="start">$</InputAdornment>,
+            startAdornment: <InputAdornment position="start">--</InputAdornment>,
           }}
         />
+        
+
       <Slider
   aria-label="Temperature"
   defaultValue={30}
@@ -126,6 +140,7 @@ fetch("/sellcoin", {
 <Container>
 
 <div style={{display:'flex', flexDirection:'column' ,padding:'50px' ,justifyContent:'center', alignItems:'center' , boxShadow:'1px 1px 18px -17px' , borderRadius:'23px',backgroundColor:'white'}}>
+<div id="avbl"> <div style={{color:'#67686C'}}>Avbl. : 43555 USDT</div></div>
 <TextField   inputProps={{ inputMode: 'numeric' }}
           label="Amount"
           id="sellamount"

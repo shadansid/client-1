@@ -59,7 +59,7 @@ const formdata = {
  
 
 
-fetch('http://165.232.142.159/api/adduser', {
+fetch('/adduser', {
   method: 'POST',
   body:JSON.stringify(formdata),
   headers: {

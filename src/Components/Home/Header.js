@@ -94,7 +94,7 @@ const hidetoggle = () =>{
 
 <ToggleButton onClick={togglebtn} value="justify" key="justify" style={{border:'none' , padding:'2px', marginTop:'5px'}} sx={{display:{xs:'block', sm:'none'}}}>
       <FormatAlignJustifyIcon style={{color:'#331E73'}} />
-    </ToggleButton>,
+    </ToggleButton>
 
 
 <Typography  style={{background: `linear-gradient(to right, #30CFD0 0%, #330867 100%)`,

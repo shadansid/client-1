@@ -53,7 +53,9 @@ function CoinListBox({coins}) {
      return <CoinList key={element.coinid} symbol={element.symbol} coinimg={element.coinimg} price={price} color={color} /> 
      
      })}
+      <div style={{borderTop:'1px solid #363c4e', height:'38px'}}>hello</div>
   </div>
+ 
  
 
   </> 

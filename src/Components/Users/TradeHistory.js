@@ -3,10 +3,10 @@ import axios from 'axios'
 import {Typography} from '@mui/material'
 const TradeHistory =  () => {
   
-  const [tradedata,settradedata]  = useState([])
+  const [tradedata,settradedata]  = useState(0)
 
   useEffect(()=>{
-    const url = "http://165.232.142.159/api/showtrade";
+    const url = "/showtrade";
     axios.get(url, config)
     .then(res=>{ console.log(res.data)
     settradedata(res.data)
@@ -14,7 +14,7 @@ const TradeHistory =  () => {
     })
     .catch(err=> console.log(err))
 
-  },[])
+  },[tradedata])
 
 
   const config = {

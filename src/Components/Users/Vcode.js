@@ -19,7 +19,7 @@ export default function Vcode() {
 
   const redirectcode =()=>{
   
-    navivcode('/userpanel')
+    navivcode('/userpanel/userdashboard')
   }
   
   
@@ -40,7 +40,7 @@ const codeData = {
  
 
 
-fetch('http://165.232.142.159/api/verifyuser', {
+fetch('/verifyuser', {
   method: 'POST',
   body:JSON.stringify(codeData),
   headers: {
