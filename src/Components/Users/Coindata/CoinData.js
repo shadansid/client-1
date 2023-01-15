@@ -18,7 +18,7 @@ function CoinData() {
   const [coins,setCoins] = useState([])
 
   client.onopen = () => {
-    console.log('WebSocket Client Connected');
+    // console.log('WebSocket Client Connected');
   };
   useEffect(()=>{
     

@@ -16,6 +16,10 @@ export default function Registration() {
  
 const [registered , setregister] = useState({})
 
+const [validemail,setvalidemail] = useState(false)
+const [validpass,setvalidpass] = useState(false)
+const [notvalid,setnotvalid] = useState(true)
+
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
     setOpen(false);
@@ -48,6 +52,7 @@ let name = document.getElementById('xyzname').value;
 let pass = document.getElementById('xyzpass').value; 
 
 
+
 const formdata = {
 
   name:name,
@@ -56,21 +61,52 @@ const formdata = {
   
 
 }
- 
+ if(name==="" || email==="" || pass===""){
 
 
-fetch('/adduser', {
-  method: 'POST',
-  body:JSON.stringify(formdata),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => response.json())
-  .then((json) =>{  setregister(json) 
-    // sessionStorage.setItem("accessToken",json.accesstoken) 
- 
-  });
+}
+
+setInterval(()=>{
+  setregister(false)
+
+},3000)
+
+setInterval(()=>{
+  setnotvalid(true)
+
+},3000)
+
+if(validemail && validpass){
+  fetch('/adduser', {
+    method: 'POST',
+    body:JSON.stringify(formdata),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) =>{  setregister(json) 
+      // sessionStorage.setItem("accessToken",json.accesstoken) 
+   
+    });
+  
+  
+}else{
+
+  setnotvalid(false)
+
+if(validemail){
+  console.log(" Use Strong password")
+
+}else{
+console.log("Enter Valid email")
+
+}
+
+// console.log("use valid things")
+
+}
+
 
 
 
@@ -85,12 +121,13 @@ const handleChangeEmail = (e) =>{
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 if(e.target.value.match(mailformat))
 {
-console.log("Valid email address!");
+
+setvalidemail(true)
 
 }
 else
 {
-console.log("You have entered an invalid email address!");
+  setvalidemail(false)
 
 }
 
@@ -115,10 +152,12 @@ const handleChangePass = (e) =>{
 
   var PassExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
   if(e.target.value.match(PassExpression)){
-      console.log("Strong pass")
+
+      setvalidpass(true)
 
   }else{
-    console.log("weak pass")
+   
+    setvalidpass(false)
   }
 
 
@@ -204,7 +243,7 @@ const handleChangePass = (e) =>{
 
                   
             
-               <Checkbox size="small" style={{ color:'#30CFD0'}} /> <p style={{cursor:'pointer'}} onClick={handleToggle}>Accept the Terms and Conditions</p> </div>
+               <Checkbox disabled checked size="small" style={{ color:'#30CFD0'}} /> <p style={{cursor:'pointer'}} onClick={handleToggle}>Accept the Terms and Conditions</p> </div>
 
 
 
@@ -219,8 +258,17 @@ const handleChangePass = (e) =>{
 
                <Button variant="outlined" onClick={register} style={{backgroundColor:'#30CFD0', color:'white'}} endIcon={<KeyboardArrowRightOutlinedIcon />}>Register</Button>
 
-               {registered? <p  style={{ color:'#30CFD0', textAlign:'center', marginTop:'7px'}}>{registered.msg}</p>:<div></div>}
-            
+
+              
+                {registered? <p  style={{ color:'#30CFD0', textAlign:'center', marginTop:'7px'}}>{registered.msg}</p>:<div></div>}
+               
+                {!(notvalid)? <p  style={{ color:'#30CFD0', textAlign:'center', marginTop:'7px'}}>Check Your Credentials</p>:<div></div>}
+
+
+             
+               
+              
+               
 
            </div>
        </div>

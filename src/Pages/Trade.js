@@ -7,6 +7,7 @@ import CoinData from '../Components/Users/Coindata/CoinData'
 import TradeHistory from '../Components/Users/TradeHistory'
 import { useEffect, useState } from 'react'
 import './css/Trade.css'
+import { Box} from '@mui/material';
 import SingleCoin from '../Components/Users/Coindata/SingleCoin'
 import useContext from 'react'
 
@@ -39,28 +40,33 @@ const Trade = () => {
     
     }
     
-    const [state,dispatcher] = useReducer(reducer,"ETHUSDT")
+    // const [state,dispatcher] = useReducer(reducer,"ETHUSDT")
+    const [state,dispatcher] = useReducer(reducer,{symbol:'ETHUSDT',custom:false})
   
     
     return (
-  
+
     <>
     <UserHeader/>
     <SingleCoin/>
     <Context.Provider value={{
-        state:state,
+        symbol:state.symbol,
+        custom:state.custom,
+        Cprice:state.Cprice,
         dispatcher : dispatcher
     }}>
-    <div className="coinwrap">
+    <div  className="coinwrap">
 
     {/* 1250 */}
     <CoinData coins={coins} coinChange={handleCoinChange}/>
-    <AdvancedRealTimeChart style={{zIndex:-2}} height={714} width={window.innerWidth - 300}  symbol={state}   theme='dark'    hide_top_toolbar='true' hide_side_toolbar='true' container_id='chart' ></AdvancedRealTimeChart>
+    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+    <AdvancedRealTimeChart style={{zIndex:-2}} height={714} width={window.innerWidth - 300}  symbol={state.symbol}   theme='dark'    hide_top_toolbar='true' hide_side_toolbar='true' container_id='chart' ></AdvancedRealTimeChart>
+    </Box>
     </div>
     
     <BuyCoin coins={coins} coinChange={handleCoinChange}/>
     </Context.Provider>
-    <TradeHistory />
+    {/* <TradeHistory /> */}
         </>
   
   

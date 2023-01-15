@@ -38,17 +38,26 @@ const TradeHistory =  () => {
    
 <div style={{padding:'20px'}}><Typography sx={{fontSize:'25px'}}>Trade History</Typography></div>
 
+<div  style={{display:'flex', alignItems:'center', justifyContent:'space-around' ,backgroundColor:'white', padding:'20px'}}>
+<div style={{width:'10%'}}>ID</div>
+<div style={{width:'20%'}}>Name</div>
+<div style={{width:'30%'}}>Amount</div>
+<div style={{width:'20%'}}>Coin Price</div>
+<div style={{width:'10%'}}>Type</div>
+<div style={{width:'30%'}}>Date</div>
+</div>
 
 {tradedata && tradedata.map((ele)=>{
 
-return <div style={{display:'flex', alignItems:'center', justifyContent:'space-around' , padding:'20px'}}>
+return <div style={{display:'flex', alignItems:'center',justifyContent:'space-around' , padding:'20px'}}>
 {/* {ele.type== 'credit'? :} */}
-<div><img src={`http://localhost:5000/static/images/coinimage/${ele.currency}.png`} alt=""  height="20px" width="20px"/></div>
-<div>{ele.currency}</div>
-<div>{ele.quantity}</div>
-<div>{ele.amount}</div>
-<div>{ele.type}</div>
-<div>{ele.dt}</div>
+<div style={{width:'10%'}}><img src={`http://localhost:5000/static/images/coinimage/${ele.currency}.png`} alt=""  height="20px" width="20px"/></div>
+<div style={{width:'20%',color:'#6F6A6D'}}>{ele.currency}</div>
+<div style={{width:'30%',color:((ele.type ==='credit')?'green':'red')}}>{"$ "+ ele.quantity*ele.amount}</div>
+<div style={{width:'20%',color:'#6F6A6D'}}>{ele.amount}</div>
+<div style={{width:'10%',color:((ele.type ==='credit')?'green':'red')}}>{ele.type}</div>
+<div style={{width:'30%',color:'#6F6A6D'}}>{ele.dt}</div>
+
 
 
 {/* <div><img src= alt="" /></div> */}

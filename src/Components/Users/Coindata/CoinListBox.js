@@ -1,6 +1,7 @@
 import React from 'react';
 import CoinList from './CoinList'
 import './Css/CoinListBox.css'
+import { Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 
@@ -12,7 +13,7 @@ function CoinListBox({coins}) {
   
   axios("/getcoin").then(res=>res.data).then((data)=>{
 
-    console.log(data)
+    // console.log(data)
     setcoin(data)
 
   })
@@ -50,10 +51,14 @@ function CoinListBox({coins}) {
 
     }
 
-     return <CoinList key={element.coinid} symbol={element.symbol} coinimg={element.coinimg} price={price} color={color} /> 
+     return <CoinList key={element.coinid} symbol={element.symbol} coinimg={element.coinimg} price={price} color={color} quantity={element.quantity} Cprice={element.price} custom={element.custom}  /> 
      
      })}
-      <div style={{borderTop:'1px solid #363c4e', height:'38px'}}>hello</div>
+      <div style={{borderTop:'1px solid #363c4e', height:'38px'}}>
+      
+
+
+      </div>
   </div>
  
  

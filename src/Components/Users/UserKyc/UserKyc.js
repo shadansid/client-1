@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import UploadID from './UploadID';
 import {Container, Typography, Toolbar,IconButton, Button,Badge,
     Box, Step, Stepper, StepLabel,StepButton
 } from '@mui/material'
@@ -20,7 +21,7 @@ const UserKyc = () => {
   <Container style={{marginTop:'30px' , padding:'40px'}}>
 
   <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={0} alternativeLabel>
+      <Stepper activeStep={1} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
@@ -29,6 +30,7 @@ const UserKyc = () => {
       </Stepper>
     </Box>
 
+<UploadID></UploadID>
 
   </Container>
   

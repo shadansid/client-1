@@ -103,7 +103,7 @@ background-color: #F5F9FC;
     display: flex;
     color: #888888;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-top:10px ;
     margin-bottom: 10px;
 }

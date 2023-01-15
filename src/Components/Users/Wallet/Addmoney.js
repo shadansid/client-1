@@ -24,7 +24,7 @@ axios.post('/addmoney', {
   )
   .then(function (response) {
     
-    console.log(response);
+    // console.log(response);
 
     setpyurl(response.data.payment_url)
 
@@ -33,7 +33,7 @@ axios.post('/addmoney', {
 
   })
   .catch(function (error) {
-    console.log(error);
+    // console.log(error);
   });
 
     

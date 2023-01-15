@@ -15,6 +15,7 @@ import SecurityIcon from '@mui/icons-material/Security';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import SsidChartIcon from '@mui/icons-material/SsidChart';
 
 
 const UserPanel = () => {
@@ -96,14 +97,20 @@ const hidetoggle = () =>{
 
  <Grid item xs={12} className='gridbox' >
  <SecurityIcon style={{color:'#0082FC'}} />
- <Link style={{textDecoration:'none', color:'black' , fontSize:'16px',marginLeft:'10px'}} to='/login'>Security</Link>
+ <Link style={{textDecoration:'none', color:'black' , fontSize:'16px',marginLeft:'10px'}} to=''>Security</Link>
  </Grid>
 
  <Grid item xs={12} className='gridbox' >
  <PersonAddIcon style={{color:'#22A3D0'}} />
- <Link style={{textDecoration:'none', color:'black' , fontSize:'16px',marginLeft:'10px'}} to='/registration'>Referral</Link>
+ <Link style={{textDecoration:'none', color:'black' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/referral'>Referral</Link>
  
  
+ </Grid>
+
+
+ <Grid item xs={12} className='gridbox' >
+ <SsidChartIcon style={{color:'#0082FC'}} />
+ <Link style={{textDecoration:'none', color:'black' , fontSize:'16px',marginLeft:'10px'}} to='/chart'>Technical Analysis</Link>
  </Grid>
 
 
@@ -112,8 +119,7 @@ const hidetoggle = () =>{
  <Link style={{textDecoration:'none', color:'black' , fontSize:'16px',marginLeft:'10px'}} to='/Logout'>Logout</Link>
  </Grid>
 
-
-
+<Link to='/airdropcontest'></Link>
 </Grid>
 
 
@@ -126,9 +132,25 @@ const hidetoggle = () =>{
 
  </Container>
 
- <Box sx={{display:{xs:'block', sm:'none' , position:'fixed' , bottom:0, height:'38px' , width:'100vh' ,zIndex:5 , display:'flex' , justifyContent:'center' , alignItems:'center' , backgroundColor:'#171B26'}}}>
- this BCEX
+ <Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' , flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px'}}}>
+ 
+ <Box>
+  <DashboardIcon style={{color:'#5442f2'}} />
+  </Box>
+   
+<Box>
 
+<Person4Icon style={{color:'#EA661C'}} />
+</Box>
+<Box>
+ <AccountBalanceWalletIcon style={{color:'#0082FC'}} />
+ </Box>
+<Box>
+ <ArticleIcon style={{color:'#1392DE'}}/>
+ </Box>
+
+
+ 
  </Box>
  </div> 
  </div> 

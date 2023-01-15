@@ -6,7 +6,8 @@ const AllUserBox = (props) => {
  
  
  
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(true);
+    const [disabled,setdisabled]= useState(false);
 
 
 
@@ -35,7 +36,7 @@ const AllUserBox = (props) => {
  
     return (
    <>
-     <div  style={{display:'flex', justifyContent:'space-around',alignItems:'center',height:'10vh' , border:'1px solid #888888'}}> <div>{props.Name}</div> <div>{props.email}</div>{props.checked}<div><Switch
+     <div  style={{display:'flex', justifyContent:'space-around',alignItems:'center',height:'10vh' , border:'1px solid #888888'}}> <div>{props.Name}</div> <div>{props.email}</div>{props.checked}<div><Switch 
       onChange={handleChange}
       inputProps={{ 'aria-label': 'controlled' }}
     /></div>  </div>

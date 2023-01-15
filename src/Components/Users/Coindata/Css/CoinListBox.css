@@ -3,9 +3,31 @@
     background-color: #171B26; 
      width: 300px;
      border-bottom: 1px solid #363c4e ;
+     overflow: scroll;
+     overflow-x: hidden;
     
   
 
 
 
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #171B26;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
