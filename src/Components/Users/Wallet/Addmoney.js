@@ -13,7 +13,7 @@ const addmn = ()=>{
 let amountbox = document.getElementById('amountbox').value;
 
 
-axios.post('/addmoney', {
+axios.post('http://64.227.140.80/api/addmoney', {
     amount:amountbox,
     currency:age
   },{
@@ -55,10 +55,10 @@ axios.post('/addmoney', {
           value={age}
           onChange={handleChange}
           >
-          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"usdt"}> <div><img src="http://localhost:5000/static/images/coinimage/usdt.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; USDT</div> </MenuItem>
+          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"usdt"}> <div><img src="http://64.227.140.80/api/static/images/coinimage/usdt.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; USDT</div> </MenuItem>
 
-          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"btc"}><div><img src="http://localhost:5000/static/images/coinimage/btc.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; BTC</div></MenuItem>
-          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"eth"}><div><img src="http://localhost:5000/static/images/coinimage/eth.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; ETH</div></MenuItem>
+          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"btc"}><div><img src="http://64.227.140.80/api/static/images/coinimage/btc.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; BTC</div></MenuItem>
+          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"eth"}><div><img src="http://64.227.140.80/api/static/images/coinimage/eth.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; ETH</div></MenuItem>
         </Select>
         <TextField  type='number'  id="amountbox" sx={{height:'40px' , width:'80%'}} size='small' placeholder='Amount' /></div>
         <div></div>

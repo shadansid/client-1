@@ -63,7 +63,7 @@ const Transaction = ()=>{
 
     useEffect(()=>{
 
-        axios.get('/checklogin')
+        axios.get('http://64.227.140.80/api/checklogin')
         .then(function (response) {
            
             setLogin(response.data.status);
@@ -99,7 +99,7 @@ const Transaction = ()=>{
         
         
          <Grid item  xs={6} md={12} >
-             <Container onClick={Airdrop} style={{background:'url("http://localhost:5000/static/images/Airdrop/airdrop.jpg")',backgroundSize:'cover',backgroundPosition:'center' , height:'300px', borderRadius:'23px' , cursor:'pointer'}}>
+             <Container onClick={Airdrop} style={{background:'url("http://64.227.140.80/api/static/images/Airdrop/airdrop.jpg")',backgroundSize:'cover',backgroundPosition:'center' , height:'300px', borderRadius:'23px' , cursor:'pointer'}}>
                
      
         

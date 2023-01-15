@@ -77,7 +77,7 @@ setInterval(()=>{
 },3000)
 
 if(validemail && validpass){
-  fetch('/adduser', {
+  fetch('http://64.227.140.80/api/adduser', {
     method: 'POST',
     body:JSON.stringify(formdata),
     headers: {

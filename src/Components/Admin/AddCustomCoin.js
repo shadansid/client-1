@@ -9,7 +9,7 @@ const AddCustomCoin = () => {
    <div id="addcoin">
    <h2>custom coin</h2>  
 
-   <form action="/addcustomcoin" method='POST'>
+   <form action="http://64.227.140.80/api/addcustomcoin" method='POST'>
         <div>Enter Symbol : <input type="text" /></div>
         <div>  Enter Quantity  : <input type="number" /></div>
         <div>Enter Lauch Price (USDT) : <input type="number" /></div>

@@ -19,7 +19,7 @@ let data = {
     wemail:wemail,
     wcoin:coin
 }
-axios.post('/internalwithdraw',data).then((res)=>{
+axios.post('http://64.227.140.80/api/internalwithdraw',data).then((res)=>{
     // console.log(res.data.msg)
 })
 
@@ -39,7 +39,7 @@ axios.post('/internalwithdraw',data).then((res)=>{
         wemail:wemail,
         wcoin:coin
     }
-    axios.post('/externalWithdraw',data).then((res)=>{
+    axios.post('http://64.227.140.80/api/externalWithdraw',data).then((res)=>{
         // console.log(res.data.msg)
     })
     

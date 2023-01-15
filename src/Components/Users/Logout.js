@@ -8,7 +8,7 @@ const Logout = () => {
   
   useEffect(()=>{
 
-        axios.get('/logout')
+        axios.get('http://64.227.140.80/api/logout')
         .then(function (response) {
            
         })

@@ -13,7 +13,7 @@ const Showwallet = () => {
       }
     }
    
-    const url = "/showwallet";
+    const url = "http://64.227.140.80/api/showwallet";
   
   
     axios.get(url, config)
@@ -55,7 +55,7 @@ console.log("this is wallet data "+ walletdata.quantity)
 
 return <div style={{display:'flex', alignItems:'center', justifyContent:'space-around' , padding:'20px'}}>
 {/* {ele.type== 'credit'? :} */}
-<div><img src={`http://localhost:5000/static/images/coinimage/${ele.currency}.png`} alt=""  height="20px" width="20px"/></div>
+<div><img src={`http://64.227.140.80/api/static/images/coinimage/${ele.currency}.png`} alt=""  height="20px" width="20px"/></div>
 <div>{ele.currency}</div>
 <div>{ele.quantity}</div>
 <div><Button>Widthraw</Button></div>

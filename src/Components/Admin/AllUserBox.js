@@ -19,7 +19,7 @@ const AllUserBox = (props) => {
   console.log(event.target.checked)
   axios({
       method: 'post',
-      url: '/allowusers',
+      url: 'http://64.227.140.80/api/allowusers',
       data: {
         Allow: checked,
         userid:props.userid,

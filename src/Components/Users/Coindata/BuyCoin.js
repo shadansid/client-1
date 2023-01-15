@@ -50,7 +50,7 @@ let axiosConfig = {
 
 
 
-axios.post('/pay', postData, axiosConfig)
+axios.post('http://64.227.140.80/api/pay', postData, axiosConfig)
 .then((res) => {
 
   setBuyres(res.data)
@@ -70,7 +70,7 @@ axios.post('/pay', postData, axiosConfig)
 // console.log(sellamount)
 
 
-fetch("/sellcoin", {
+fetch("http://64.227.140.80/api/sellcoin", {
   method: "POST",
 
   body: JSON.stringify({

@@ -7,7 +7,7 @@ const AllUsers = () => {
  const [data, setdata] = useState([]);
     useEffect(()=>{
 
-        axios("/getallusers").then(res=>res.data).then((data)=>{
+        axios("http://64.227.140.80/api/getallusers").then(res=>res.data).then((data)=>{
 
             setdata(data);
             
