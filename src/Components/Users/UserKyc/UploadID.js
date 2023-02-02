@@ -31,7 +31,7 @@ console.log(formdata)
 
     axios({
   method: 'post',
-  url: '/userkyc',
+  url: 'http://64.227.140.80/api/userkyc',
   
   // data: JSON.stringify({
   //   name: name,
@@ -58,21 +58,21 @@ console.log(formdata)
   return (
     
     <>
-    <Box sx={{display:'flex', flexDirection:'column' , justifyContent:'space-around'}}>
+    <Box sx={{display:'flex', flexDirection:'column' , justifyContent:'space-around' , alignItems:'center', padding:'80px'}}>
 
-<div style={{margin:'12px'}}><TextField id="name" label="Full Name" variant="outlined" /></div>
-<div style={{margin:'12px'}}><TextField id="adhar" label="AdharCard Number" variant="outlined" /></div>
-<div style={{margin:'12px'}}><TextField id="phone" label="Phone Number" variant="outlined" /></div>
-<div style={{margin:'12px'}}><TextField id="pancard" label="PAN Number" variant="outlined" />
+<div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary"  size="small" id="name" label="Full Name" variant="outlined" focused /></div>
+<div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary"  size="small" id="adhar" label="AdharCard Number" variant="outlined" focused /></div>
+<div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary" size="small" id="phone" label="Phone Number" variant="outlined" focused /></div>
+<div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary"  size="small" id="pancard" label="PAN Number" variant="outlined" focused />
 </div>
   
-<div style={{margin:'12px'}}> <Button variant="contained" component="label">
+<div style={{margin:'12px'}}> <Button size="small" variant="contained" component="label">
   Upload ID
   <input id='img' hidden accept="image/*" onChange={(e) => setimage(e.target.files[0])} multiple type="file" />
 </Button></div>
     
     
-<div style={{margin:'12px'}}><Button onClick={submit} variant="contained" component="label">Submit</Button></div>
+<div style={{margin:'12px', display:'flex'}}><Button size="small" onClick={submit} variant="contained" component="label">Submit</Button></div>
     </Box>
     </>
 

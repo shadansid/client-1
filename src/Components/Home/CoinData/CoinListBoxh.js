@@ -32,7 +32,15 @@ function CoinListBoxh({coins}) {
   return (
    
   <>
-  <div className="coinlistbox" style={{backgroundColor:'transparent', width:'100%', color:'black'}}>
+  <div  style={{backgroundColor:'transparent', width:'100%', color:'black', border:'1px solid #d4d4d4',borderRadius:'9px'}}>
+  
+  <div style={{height:'8vh',padding:'13px',borderBottom:'1px solid #d4d4d4',borderRadius:'9px', display:'flex',alignItems:'center'}}>
+      <div style={{width:'30%',fontSize:'16px',color:'#657489'}}>Assests</div>
+      <div style={{width:'20%',fontSize:'16px',color:'#657489'}}>Name</div>
+      <div style={{width:'30%',fontSize:'16px',color:'#657489'}}>Price</div>
+      <div style={{width:'20%',fontSize:'16px',color:"#657489"}}>Action</div>
+    </div>
+    
   {coin.map((element)=>{
 
     let price = ""
@@ -50,7 +58,7 @@ function CoinListBoxh({coins}) {
 
     }
 
-     return <CoinListh style={{color:'black' , border:'none'}} key={element.coinid} symbol={element.symbol} coinimg={element.coinimg} price={price} color={color} /> 
+     return <CoinListh style={{}} key={element.coinid} symbol={element.symbol} coinimg={element.coinimg} price={price} color={color} /> 
      
      })}
   </div>

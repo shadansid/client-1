@@ -17,18 +17,19 @@ const UserKyc = () => {
     return (
  
   <>
+  <Container sx={{color:'white', fontSize:'20px', paddingTop:'30px'}}>Complete Your KYC </Container>
   
-  <Container style={{marginTop:'30px' , padding:'40px'}}>
+  <Container style={{marginTop:'30px' , padding:'40px' , border:'1px solid grey'}}>
 
-  <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={1} alternativeLabel>
+  {/* <Box sx={{ width: '100%', color:'white' }}>
+      <Stepper sx={{color:'white'}} activeStep={2} alternativeLabel>
         {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+          <Step sx={{color:'white'}} key={label}>
+            <StepLabel sx={{color:'white'}}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
-    </Box>
+    </Box> */}
 
 <UploadID></UploadID>
 

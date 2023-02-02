@@ -39,7 +39,7 @@ axios.post('http://64.227.140.80/api/internalwithdraw',data).then((res)=>{
         wemail:wemail,
         wcoin:coin
     }
-    axios.post('http://64.227.140.80/api/externalWithdraw',data).then((res)=>{
+    axios.post('/externalWithdraw',data).then((res)=>{
         // console.log(res.data.msg)
     })
     
@@ -53,39 +53,40 @@ axios.post('http://64.227.140.80/api/internalwithdraw',data).then((res)=>{
     return (
   
     <>
-     <div style={{padding:"20px" , display:'flex' ,justifyContent:'space-between',alignItems:'center', backgroundColor:'white'}}>
+    <div style={{border:'1px solid grey'}}>
+     <div style={{padding:"20px" , display:'flex' ,justifyContent:'space-between',alignItems:'center' }}>
      {/* <h3> Transfer to your own wallet</h3> */}
-     <select style={{input:{color:'black', width:'20ch', color:'black'}}} id="coin" value={coin} onChange={handleChange}>  
-     <option   style={{color:'black'}} value="ETH">ETH</option>  
-<option style={{color:'black'}} value="USDT">USDT</option>  
-<option style={{color:'black'}} value="BTC">BTC</option>  
-<option  style={{color:'black'}} value="DOGE">DOGE</option>  
-</select> 
+     <Select style={{height:'40px',border:'1px solid grey',color:'grey' , width:'18%', marginRight:'1px', color:'black', backgroundColor:'none'}} id="coin" value={coin} onChange={handleChange}>  
+     <MenuItem  value="ETH"><img src="http://64.227.140.80/api/static/images/coinimage/eth.png"  height='20px' width='20px' alt="" />&nbsp;ETH</MenuItem>  
+<MenuItem value="USDT"><img src="http://64.227.140.80/api/static/images/coinimage/usdt.png"  height='20px' width='20px' alt="" />&nbsp;USDT</MenuItem>  
+<MenuItem  value="BTC"><img src="http://64.227.140.80/api/static/images/coinimage/btc.png"  height='20px' width='20px' alt="" />&nbsp;BTC</MenuItem>  
+<MenuItem   value="DOGE"><img src="http://64.227.140.80/api/static/images/coinimage/doge.png"  height='20px' width='20px' alt="" />&nbsp;DOGE</MenuItem>  
+</Select> 
 
-<TextField small  id='amount' placeholder='Amount'>
+<TextField id='amount' placeholder='Amount' sx={{border:'1px solid grey' , input:{color:'grey'}  }}>
 </TextField>
-<TextField id='email' placeholder='Wallet Address'>
+<TextField id='email' placeholder='Wallet Address'  sx={{border:'1px solid grey' , input:{color:'grey'}}} >
 </TextField>
 <Button variant="contained" onClick={exwithdraw}>Withdraw</Button>
 </div>
 
-    <div style={{padding:"20px",display:'flex' ,justifyContent:'space-between',alignItems:'center', backgroundColor:'#30CFD0'}}>
+    <div style={{padding:"20px" , display:'flex' ,justifyContent:'space-between',alignItems:'center', backgroundColor:'none'}}>
 {/* <h3>Internal Transfer</h3> */}
-<select id="coin" value={coin} onChange={handleChange}>  
-<option value="ETH">ETH</option>  
-<option value="USDT">USDT</option>  
-<option value="BTC">BTC</option>  
-<option value="DOGE">DOGE</option>  
-</select> 
+<Select style={{height:'40px' ,border:'1px solid grey', width:'18%', color:'grey',marginRight:'1px', color:'black', backgroundColor:'none'}} id="coin" value={coin} onChange={handleChange} >  
+<MenuItem value="ETH"><img src="http://64.227.140.80/api/static/images/coinimage/eth.png"  height='20px' width='20px' alt="" />&nbsp;ETH</MenuItem>  
+<MenuItem value="USDT"><img src="http://64.227.140.80/api/static/images/coinimage/usdt.png"  height='20px' width='20px' alt="" />&nbsp;USDT</MenuItem>  
+<MenuItem value="BTC"><img src="http://64.227.140.80/api/static/images/coinimage/btc.png"  height='20px' width='20px' alt="" />&nbsp;BTC</MenuItem>  
+<MenuItem value="DOGE"><img src="http://64.227.140.80/api/static/images/coinimage/doge.png"  height='20px' width='20px' alt="" />&nbsp;DOGE</MenuItem>  
+</Select> 
 
-<TextField small  id='wamount' placeholder='Amount'/>
+<TextField small  id='wamount' placeholder='Amount' sx={{border:'1px solid grey' , input:{color:'grey'}}}/>
 
-<TextField id='wemail' placeholder='Email Address'/>
+<TextField id='wemail' placeholder='Email Address'sx={{border:'1px solid grey' , input:{color:'grey'}}}/>
 
 <Button variant="contained" onClick={inwithdraw}>Withdraw</Button>
 </div>
 
-
+</div>
     
     </>
   

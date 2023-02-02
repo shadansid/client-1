@@ -63,7 +63,7 @@ const Transaction = ()=>{
 
     useEffect(()=>{
 
-        axios.get('http://64.227.140.80/api/checklogin')
+        axios.get('/checklogin')
         .then(function (response) {
            
             setLogin(response.data.status);
@@ -91,43 +91,59 @@ const Transaction = ()=>{
          
 
        
-        <Container style={{padding:'30px', height:'90vh'}}>
+        <Container style={{padding:'30px',backgroundColor:"#171B26"}}>
      
          <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
      
         
         
         
-         <Grid item  xs={6} md={12} >
-             <Container onClick={Airdrop} style={{background:'url("http://64.227.140.80/api/static/images/Airdrop/airdrop.jpg")',backgroundSize:'cover',backgroundPosition:'center' , height:'300px', borderRadius:'23px' , cursor:'pointer'}}>
+         {/* <Grid item  xs={6} md={12} > */}
+   
+           
+           {/* </Grid> */}
+     
+           
+           
+           {/* <Grid item  xs={6} >
+           <Container  onClick={Wallet} style={{background:'#1B192F', height:'150px', borderRadius:'23px',cursor:'pointer' }}> */}
+               
+           <WalletBalane />
+           <Container sx={{height:'8vh',color:'#EAECEF' , fontSize:'28px', display:'flex',alignItems:'center'}}>Recommended For You
+</Container>
+             <Container onClick={Airdrop}>
+
+                    <img src="http://64.227.140.80/api/static/images/Airdrop/airdrop.jpg" alt="" height='300px' />   
+
+        
+     
+                   </Container>
+                   <Container sx={{height:'8vh',color:'#EAECEF' , fontSize:'28px', display:'flex',alignItems:'center'}}>Recent Transactions
+</Container>
+    
+           <Container>
+
+                      <TradeHistoryDashboard/>
+           </Container>
+             {/* <Container onClick={Airdrop} style={{background:'url("http://64.227.140.80/api/static/images/Airdrop/airdrop.jpg")',backgroundSize:'cover',backgroundPosition:'center' , height:'300px', borderRadius:'23px' , cursor:'pointer'}}>
                
      
         
      
-                </Container>
-           
-           </Grid>
-     
-           
-           
-           <Grid item  xs={6} >
-           <Container  onClick={Wallet} style={{background:'#30CFD0', height:'150px', borderRadius:'23px',cursor:'pointer' }}>
-               
-           <WalletBalane />
-     
+                </Container> */}
          
      
         
-               </Container>
-           </Grid>
+               {/* </Container> */}
+           {/* </Grid> */}
      
-           <Grid item  xs={6} >
-           <Container onClick={Trade} style={{background:'white', height:'150px', borderRadius:'23px',  overflow: 'scroll', overflowX:'hidden',cursor:'pointer',"-webkit-scrollbar": {
+           {/* <Grid item  xs={6} >
+           <Container onClick={Trade} style={{background:'#1B192F', height:'150px', borderRadius:'23px',  overflow: 'scroll', overflowX:'hidden',cursor:'pointer',"-webkit-scrollbar": {
   display: "none"
 }}}>
            <TradeHistoryDashboard/>
                </Container>
-           </Grid>
+           </Grid> */}
 
            
       

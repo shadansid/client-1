@@ -1,10 +1,10 @@
 import React from 'react';
 import CoinList from './CoinList'
 import './Css/CoinListBox.css'
-import { Button } from '@mui/material';
+import { Button ,SearchBar, Box} from '@mui/material';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
-
+import SearchIcon from '@mui/icons-material/Search';
 function CoinListBox({coins}) {
   const [coin,setcoin]=useState([])
   
@@ -34,6 +34,14 @@ function CoinListBox({coins}) {
    
   <>
   <div className="coinlistbox">
+  {/* <Box>
+            
+              <SearchIcon />
+            </Box> */}
+
+            <Box> <div style={{display:'flex', alignItems:'center',gap:'10px'}}><input type="text" placeholder='Explore New Coins...'  style={{height:"15px", backgroundColor:'transparent' , border:'1px solid grey', padding:'15px' , margin:'10px'}}   /> <SearchIcon sx={{color:'#3468D1'}} /></div></Box>
+           
+         
   {coin.map((element)=>{
 
     let price = ""
@@ -54,7 +62,7 @@ function CoinListBox({coins}) {
      return <CoinList key={element.coinid} symbol={element.symbol} coinimg={element.coinimg} price={price} color={color} quantity={element.quantity} Cprice={element.price} custom={element.custom}  /> 
      
      })}
-      <div style={{borderTop:'1px solid #363c4e', height:'38px'}}>
+      <div style={{borderRight:'1px solid #363c4e', height:'38px'}}>
       
 
 

@@ -6,7 +6,7 @@ const TradeHistory =  () => {
   const [tradedata,settradedata]  = useState(0)
 
   useEffect(()=>{
-    const url = "http://64.227.140.80/api/showtrade";
+    const url = "http://64.227.140.80/api/showtrade"; 
     axios.get(url, config)
     .then(res=>{ console.log(res.data)
     settradedata(res.data)
@@ -36,9 +36,9 @@ const TradeHistory =  () => {
     
    <>
    
-<div style={{padding:'20px'}}><Typography sx={{fontSize:'25px'}}>Trade History</Typography></div>
+<div style={{padding:'20px'}}><Typography sx={{fontSize:'25px', color:'white'}}>Trade History</Typography></div>
 
-<div  style={{display:'flex', alignItems:'center', justifyContent:'space-around' ,backgroundColor:'white', padding:'20px'}}>
+<div  style={{display:'flex', alignItems:'center', justifyContent:'space-around' , padding:'20px',backgroundColor:'#26A17B' , color:'white'}}>
 <div style={{width:'10%'}}>ID</div>
 <div style={{width:'20%'}}>Name</div>
 <div style={{width:'30%'}}>Amount</div>

@@ -1,7 +1,7 @@
 import React ,{useState}from 'react'
 import {Container,Button,TextField,InputLabel,Select,MenuItem, Typography} from '@mui/material'
 import axios from 'axios';
-
+import ClearIcon from '@mui/icons-material/Clear';
 const Addmoney = () => {
     const [age, setAge] = React.useState('');
     const [pyurl,setpyurl]=useState();
@@ -43,24 +43,25 @@ axios.post('http://64.227.140.80/api/addmoney', {
   
     return (
     <>
-    <Container sx={{padding:'20px',border:'1px solid black'}}>
-    <div style={{padding:'20px'}}><Typography sx={{fontSize:'25px'}}>Add Money</Typography></div>
+    <Container sx={{padding:'20px',border:'1px solid grey' }}>
+    {/* <div style={{position:'absolute' , top:'5', right:'5'}}><ClearIcon sx={{color:'black'}} /></div> */}
+    <div style={{padding:'20px'}}><Typography sx={{fontSize:'25px',color:'#7D8794'}}>Add Money</Typography></div>
 
         <Container style={{padding:'30px', display:'flex',flexDirection:'column' }}>
         <div>
        
-        <Select sx={{height:'40px' , width:'18%', marginRight:'1px'}}
+        <Select style={{height:'40px' , width:'18%', marginRight:'1px', color:'#7D8794', border:'1px solid grey',backgroundColor:'none'}}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}
           onChange={handleChange}
           >
-          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"usdt"}> <div><img src="http://64.227.140.80/api/static/images/coinimage/usdt.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; USDT</div> </MenuItem>
+          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"usdt"}> <img src="http://64.227.140.80/api/static/images/coinimage/usdt.png"  height='20px' width='20px' alt="" />&nbsp; USDT </MenuItem>
 
-          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"btc"}><div><img src="http://64.227.140.80/api/static/images/coinimage/btc.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; BTC</div></MenuItem>
-          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"eth"}><div><img src="http://64.227.140.80/api/static/images/coinimage/eth.png"  height='20px' width='20px' alt="" /></div> <div>&nbsp; ETH</div></MenuItem>
+          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"btc"}><img src="http://64.227.140.80/api/static/images/coinimage/btc.png"  height='20px' width='20px' alt="" />&nbsp; BTC</MenuItem>
+          <MenuItem sx={{display:'flex', alignItems:'center'}} value={"eth"}><img src="http://64.227.140.80/api/static/images/coinimage/eth.png"  height='20px' width='20px' alt="" />&nbsp; ETH</MenuItem>
         </Select>
-        <TextField  type='number'  id="amountbox" sx={{height:'40px' , width:'80%'}} size='small' placeholder='Amount' /></div>
+        <TextField  type='number'  id="amountbox" sx={{height:'40px' ,input:{color:"grey"}, width:'80%',border:'1px solid grey'}} size='small' placeholder='Amount' /></div>
         <div></div>
         <Button  sx={{marginTop:'10px'}} onClick={addmn} variant='contained'>Add Money</Button>
         </Container>

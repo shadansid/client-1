@@ -1,57 +1,65 @@
 import React from 'react'
+import './css/Footer.css'
 import {Container , Grid} from '@mui/material'
 const Footer = () => {
   return (
     
     
-    <>
-    <div className="footer" style={{height:'8vh', backgroundColor:'#2B3139', color:'white' , display:'flex' , justifyContent:'center', alignItems:'center'}}>
-    {/* <Container maxWidth='xl'>
-    <Container maxWidth='lg'>
+   <>
+   <footer style={{backgroundColor:'#0B0917'}}>
 
-    <Grid container spacing={2}>
-  <Grid xs={6} md={8}>
-    <h3>About</h3>
-    <p>Company</p>
-    <p>Career</p>
-    <p>Contact</p>
-
-  </Grid>
-  <Grid xs={6} md={4}>
-    <h3>About</h3>
-    <p>Company</p>
-    <p>Career</p>
-    <p>Contact</p>
+   
+  <div class="footer" style={{ color:'white'}}>
     
-  </Grid>
-  <Grid xs={6} md={4}>
-  <h3>About</h3>
-    <p>Company</p>
-    <p>Career</p>
-    <p>Contact</p>
     
-  </Grid>
-  <Grid xs={6} md={8}>
-  <h3>About</h3>
-    <p>Company</p>
-    <p>Career</p>
-    <p>Contact</p>
     
-  </Grid>
-</Grid>
-
-    </Container>
-
-    </Container> */}
+   
+    
 
 
-
-
-  &copy; BCEX 2023
-
-
+    <div class="col">
+        <h4>Company</h4>
+        <p>About us</p>
+        <p>Need Help?</p>
+        <p>Crypto Exchange</p>
+        <p>Vision</p>
     </div>
-    
+  
+
+    <div class="col">
+        <h4>Trading</h4>
+        <p>Spot Wallet</p>
+        <p>Margin Wallet</p>
+        <p>Future Trading</p>
+    </div>
+
+
+    <div class="col">
+        <h4>Apply For Listing</h4>
+        <p>Create New Token</p>
+        <p>Earn with us</p>
+        <p>Others</p>
+        
+    </div>
+    <div class="col">
+        <h4>Technical Analysis</h4>
+        <p>CandleStick Chart</p>
+        <p>Need help</p>
+        <p>Tutorial</p>
+        
+    </div>
+
+
+
+</div>
+</footer>
+  
+
+    <div style={{display:'flex', justifyContent:'center', alignItems:'center' , height:'10vh', backgroundColor:'#171B26'}}>
+      <p style={{fontSize:'14px' , color:'grey'}}> Copyright © 2023  BCEX Crypto Exchange. All rights reserved.</p>
+    </div>
+  
+
     </>
   
   

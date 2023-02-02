@@ -111,31 +111,31 @@ fetch("http://64.227.140.80/api/sellcoin", {
   <>
    <div className="coin" style={{backgroundColor:'#171B26', zIndex:'2'}}>
 
-<Container sx={{display:'flex' , justifyContent:'space-around' , alignItems:'center' , padding:'80px' }}>
+<Box sx={{display:'flex' ,gap:'20px',justifyContent:'center' , alignItems:'center' , padding:'30px' }}>
 
-<Container>
+
 <div>  
-<div style={{display:'flex', flexDirection:'column' ,padding:'50px', justifyContent:'start', alignItems:'center' , boxShadow:'1px 1px 18px -17px' , borderRadius:'23px' , backgroundColor:'#171B26'}}>
-<div id="avbl" style={{display:'flex' , justifyContent:'flex-start',width: '25ch', height:'4vh'}}> <div style={{color:'#67686C'}}>Avbl :   </div></div>
+<div style={{display:'flex', flexDirection:'column' , justifyContent:'start', alignItems:'center'}}>
+{/* <div id="avbl" style={{display:'flex' , justifyContent:'flex-start',width: '25ch', height:'4vh'}}> <div style={{color:'#67686C'}}>Avbl :   </div></div> */}
 
-<TextField  inputProps={{ inputMode: 'number' }} 
+<TextField  size='small'  inputProps={{ inputMode: 'number' }} 
           label={context.symbol}
           
           id="buyamount"   color="primary"
-          sx={{ m: 1, width: '50ch' ,input:{color:"#185FC6"}}}
+          sx={{ m: 1, width: '48ch' ,input:{color:"#363C4E"}}}
           InputProps={{
-            startAdornment: <InputAdornment style={{color:'#185FC6'}} position="start"><div style={{color:'#363c4e'}}></div> $</InputAdornment>,
+            startAdornment: <InputAdornment style={{color:'#363C4E'}} position="start"><div style={{color:'#363c4e'}}></div> $</InputAdornment>,
           }}
           focused  />
       
-      <TextField   inputProps={{ readonly: true }}
+      <TextField  size='small' inputProps={{ readonly: true }}
           label="Amount"  value={'--'} 
           id="buyamount" color="primary"
-          sx={{ m: 1, width: '50ch',input:{color:"#185FC6"}}}
+          sx={{ m: 1, width: '48ch',input:{color:"#363C4E"}}}
           focused />
         
 
-      <Slider
+      <Slider  size='small'
   aria-label="Temperature"
   defaultValue={30}
   getAriaValueText={""}
@@ -144,38 +144,37 @@ fetch("http://64.227.140.80/api/sellcoin", {
   marks
   min={0}
   max={100} color="success"
-  sx={{width:'50ch'}}
+  sx={{width:'45ch'}}
 />
 
 <div>
 
-<Button onClick={buy} sx={{width:'50ch'}} color="success" variant="contained">Buy</Button>
+<Button size='small' onClick={buy} sx={{width:'52ch'}} color="success" variant="contained">Buy</Button>
 <div>{buyres && buyres.msg}</div>
 </div>
         
         </div>
 </div>
-</Container>
 
-<Container>
 
-<div style={{display:'flex', flexDirection:'column' ,padding:'50px' ,justifyContent:'center', alignItems:'center' , boxShadow:'1px 1px 18px -17px' , borderRadius:'23px',backgroundColor:'#171B26'}}>
-<div id="avbl"> <div style={{color:'#67686C'}}>Avbl. : </div></div>
-<TextField  inputProps={{ inputMode: 'numeric' }}
+
+<div style={{display:'flex', flexDirection:'column'  ,justifyContent:'center', alignItems:'center'}}>
+{/* <div id="avbl"> <div style={{color:'#67686C'}}>Avbl. : </div></div> */}
+<TextField size='small' inputProps={{ inputMode: 'numeric' }}
           label={context.symbol}
           id="sellamount" 
-          sx={{ m: 1, width: '50ch', color:'#363C4E',input:{color:"#363C4E"}}}
+          sx={{ m: 1, width: '48ch', color:'#363C4E',input:{color:"#363C4E"}}}
           InputProps={{
-            startAdornment: <InputAdornment style={{color:'#363C4E'}} position="start">$</InputAdornment>,
+            startAdornment: <InputAdornment style={{color:'#363C4E'}} position="start"><div style={{color:'#363c4e'}}></div> $</InputAdornment>,
           }}
           focused />
-           <TextField   inputProps={{ readonly: true }}
+           <TextField  size='small' inputProps={{ readonly: true }}
           label="Amount"  value={'--'} 
           id="buyamount" color="primary"
-          sx={{ m: 1, width: '50ch',input:{color:"#363C4E"}}}
+          sx={{ m: 1, width: '48ch',input:{color:"#363C4E"}}}
           focused />
         
-      <Slider
+      <Slider size='small'
   aria-label="Temperature"
   defaultValue={30}
   getAriaValueText={""}
@@ -184,12 +183,12 @@ fetch("http://64.227.140.80/api/sellcoin", {
   marks
   min={0}
   max={100} color="error"
-  sx={{width:'50ch'}}
+  sx={{width:'45ch'}}
 />
 
 <div>
 
-<Button onClick={sell} sx={{width:'50ch'}} color="error" variant="contained">Sell</Button>
+<Button size='small' onClick={sell} sx={{width:'52ch'}} color="error" variant="contained">Sell</Button>
 <div>{sellres && sellres.msg}</div>
 </div>
         
@@ -197,10 +196,10 @@ fetch("http://64.227.140.80/api/sellcoin", {
 
 
 
-</Container>
+</Box>
 
 
-</Container>
+
    
 
 

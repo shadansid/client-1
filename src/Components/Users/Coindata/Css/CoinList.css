@@ -3,7 +3,7 @@ div{
 }
 .coinlist{
     display: flex;
-    color: white;
+    color: grey;
     /* color: rgba(0, 0, 0, 0.667); */
     justify-content: space-around;
     align-items: center;

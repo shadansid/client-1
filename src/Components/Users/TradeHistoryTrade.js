@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import {Typography} from '@mui/material'
 
-const TradeHistoryDashboard = () => {
+const TradeHistoryTrade = () => {
     const [tradedata,settradedata]  = useState(0)
 
     useEffect(()=>{
@@ -32,11 +32,10 @@ const TradeHistoryDashboard = () => {
     
 {tradedata && tradedata.map((ele)=>{
 
-return <div style={{display:'flex', alignItems:'center',justifyContent:'space-around' , padding:'20px',backgroundColor:'#1B192F'}}>
+return <div style={{display:'flex', alignItems:'center',justifyContent:'space-around' , backgroundColor:"#171B26",padding:'20px'}}>
 {/* {ele.type== 'credit'? :} */}
-<div style={{width:'32%'}}><img src={`http://64.227.140.80/api/static/images/coinimage/${ele.currency}.png`} alt=""  height="20px" width="20px"/></div>
 <div style={{width:'32%',color:'#6F6A6D'}}>{ele.currency}</div>
-<div style={{width:'32%',color:((ele.type ==='credit')?'green':'red')}}>{"$ "+ ele.quantity*ele.amount}</div>
+<div style={{width:'32%',color:((ele.type ==='credit')?'green':'red')}}>{"$ "+ (ele.quantity*ele.amount).toFixed(4)}</div>
 
 
 {/* <div><img src= alt="" /></div> */}
@@ -52,4 +51,4 @@ return <div style={{display:'flex', alignItems:'center',justifyContent:'space-ar
   )
 }
 
-export default TradeHistoryDashboard
+export default TradeHistoryTrade

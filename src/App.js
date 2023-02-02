@@ -7,6 +7,7 @@ import Logout from './Components/Users/Logout'
 import UserPanel from './Pages/UserPanel'
 import Dashboard from './Pages/Dashboard'
 import TradeHistory from './Components/Users/TradeHistory'
+import Security from './Components/Users/Security'
 import TransactionHistory from './Components/Users/TransactionHistory'
 import Wallet from './Components/Users/Wallet/Wallet'
 import User from './Components/Admin/User'
@@ -28,6 +29,10 @@ import Vcode from './Components/Users/Vcode'
 import Chart from './Components/Users/Chart'
 import Referral from './Components/Users/Referral'
 import AirdropContest from './Components/Users/AirdropContest'
+import RequestCall from './Components/Home/RequestCall'
+import Addmoney from './Components/Users/Wallet/Addmoney'
+import Withdraw from './Components/Users/Wallet/Withdraw'
+import Showwallet from './Components/Users/Wallet/Showwallet'
 
 
 function App() {
@@ -45,14 +50,21 @@ function App() {
       
       
       <Route exact path="/userpanel/transactionhistory" element={<TransactionHistory/>}/>
-      <Route exact path="/userpanel/wallet" element={<Wallet/>}/>
+      
+      <Route exact path="/userpanel/wallet" element={<Showwallet/>}>
+      <Route exact path="/userpanel/wallet/addmoney" element={<Addmoney/>}/>
+      <Route exact path="/userpanel/wallet/withdraw" element={<Withdraw/>}/>
+      </Route>
+
       <Route exact path="/userpanel/tradehistory" element={<TradeHistory/>}/>
       <Route exact path="/userpanel/referral" element={<Referral/>}/>
       <Route exact path="/userpanel/userdashboard" element={<Dashboard/>}/>
+      <Route exact path="/userpanel/security" element={<Security/>}/>
     
       
       </Route>
       <Route exact path="/Logout" element={<Logout/>}/>
+      <Route exact path="/reqcall" element={<RequestCall/>}/>
       <Route exact path="/trade" element={<Trade/>}/>
       <Route exact path="/chart" element={<Chart/>}/>
       <Route exact path="/registration" element={<Registration/>}/>

@@ -3,6 +3,7 @@
     background-color: #171B26; 
      width: 300px;
      border-bottom: 1px solid #363c4e ;
+     border-right: 1px solid #363c4e;
      overflow: scroll;
      overflow-x: hidden;
     

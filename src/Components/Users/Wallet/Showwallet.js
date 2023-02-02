@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import {Typography,Button} from '@mui/material'
+import { Link , Outlet} from 'react-router-dom'
+import {Typography,Button,Box,Container} from '@mui/material'
 const Showwallet = () => {
     const [walletdata,setwalletdata]  = useState([])
     const [total, settotal] = useState(0);
@@ -48,17 +49,38 @@ console.log("this is wallet data "+ walletdata.quantity)
     return (
     
 <>
-<div style={{padding:'20px'}}><Typography sx={{fontSize:'25px'}}>Wallet Balance</Typography></div>
-<div style={{fontSize:'25px'}}>{total && "Total Amount ≈" + "$" + total*81.61}</div>
+
+
+<div style={{padding:'30px' , display:'flex' , alignItems:'center' , justifyContent:'center' , gap:'50px'}}>
+
+   <Box sx={{"&:active":{color:"red"},"&:hover":{color:"green"}}}>
+    
+   <Link style={{textDecoration:'none', fontSize:'16px' , color:'grey' , }} to='/userpanel/wallet'>Wallet Balance</Link>
+    </Box>   
+   <Link style={{textDecoration:'none', fontSize:'16px' , color:'grey', }} to='/userpanel/wallet/addmoney'>Add Money</Link>
+   <Link style={{textDecoration:'none', fontSize:'16px' , color:'grey'}} to='/userpanel/wallet/withdraw'>Withdraw</Link>
+  
+   </div>
+  
+   <Container> <Outlet /></Container>
+   
+
+{/* ============================================================================== */}
+<div style={{padding:'20px'}}><Typography sx={{fontSize:'25px',    display: 'flex',
+    alignItems: 'center',
+    height: '8vh' , color:'white'}}>Wallet Balance</Typography></div>
+<div style={{fontSize:'25px',background: '#26A17B',
+    padding: '25px',
+    color: 'white'}}>{total && "Total Amount ≈" + "$" + total*81.61}</div>
 
 {walletdata && walletdata.map((ele)=>{
 
 return <div style={{display:'flex', alignItems:'center', justifyContent:'space-around' , padding:'20px'}}>
 {/* {ele.type== 'credit'? :} */}
-<div><img src={`http://64.227.140.80/api/static/images/coinimage/${ele.currency}.png`} alt=""  height="20px" width="20px"/></div>
-<div>{ele.currency}</div>
-<div>{ele.quantity}</div>
-<div><Button>Widthraw</Button></div>
+<div style={{width:"20%"}}><img src={`http://64.227.140.80/api/static/images/coinimage/${ele.currency}.png`} alt=""  height="20px" width="20px"/></div>
+<div style={{color:'#7D8794', fontSize:'13px', width:"30%"}}>{(ele.currency).toUpperCase()}</div>
+<div style={{color:'#7D8794', fontSize:'13px',width:"30%"}}>{ele.quantity}</div>
+<div style={{width:"20%"}}><Button>Widthraw</Button></div>
 
 
 
