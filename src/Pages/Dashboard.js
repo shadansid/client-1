@@ -63,7 +63,7 @@ const Transaction = ()=>{
 
     useEffect(()=>{
 
-        axios.get('/checklogin')
+        axios.get('http://64.227.140.80/checklogin')
         .then(function (response) {
            
             setLogin(response.data.status);
