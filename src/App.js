@@ -12,6 +12,9 @@ import TransactionHistory from './Components/Users/TransactionHistory'
 import Wallet from './Components/Users/Wallet/Wallet'
 import User from './Components/Admin/User'
 import Test from './Test'
+import Limit from './Components/Users/Coindata/Limit'
+import Coin from './Components/Users/Coindata/Coin'
+import Stoplimit from './Components/Users/Coindata/StopLimit'
 
 import { render } from "react-dom";
 import {
@@ -33,6 +36,10 @@ import RequestCall from './Components/Home/RequestCall'
 import Addmoney from './Components/Users/Wallet/Addmoney'
 import Withdraw from './Components/Users/Wallet/Withdraw'
 import Showwallet from './Components/Users/Wallet/Showwallet'
+import Data24hr from './Components/Users/Data24hr'
+import TradeTicker from './Components/Users/TradeTicker'
+import Google2FA from './Components/Users/Google2FA'
+import CustomChart from './Components/Users/CustomChart'
 
 
 function App() {
@@ -56,6 +63,10 @@ function App() {
       <Route exact path="/userpanel/wallet/withdraw" element={<Withdraw/>}/>
       </Route>
 
+      
+
+
+
       <Route exact path="/userpanel/tradehistory" element={<TradeHistory/>}/>
       <Route exact path="/userpanel/referral" element={<Referral/>}/>
       <Route exact path="/userpanel/userdashboard" element={<Dashboard/>}/>
@@ -63,9 +74,17 @@ function App() {
     
       
       </Route>
+      {/* Limit and Market */}
+      <Route exact path="/trade" element={<Trade/>}>
+      <Route exact path="/trade/limit" element={<Limit/>}/>
+      <Route exact path="/trade/stoplimit" element={<Stoplimit/>}/>
+      </Route>
+
+
+
       <Route exact path="/Logout" element={<Logout/>}/>
       <Route exact path="/reqcall" element={<RequestCall/>}/>
-      <Route exact path="/trade" element={<Trade/>}/>
+      {/* <Route exact path="/trade" element={<Trade/>}/> */}
       <Route exact path="/chart" element={<Chart/>}/>
       <Route exact path="/registration" element={<Registration/>}/>
       <Route exact path="/login" element={<Login/>}/>
@@ -73,8 +92,12 @@ function App() {
       <Route exact path="/bycoin" element={<BuyCoin/>}/>
       <Route exact path="/vcode" element={<Vcode/>}/>
       <Route exact path="/airdropcontest" element={<AirdropContest/>}/>
+      <Route exact path="/data24" element={<Data24hr/>}/>
+      <Route exact path="/ticker" element={<TradeTicker/>}/>
+      <Route exact path="/google2fa" element={<Google2FA/>}/>
+      <Route exact path="/customchart" element={<CustomChart/>}/>
      
-
+        
 
       {/* admin routes */}
       <Route exat path='/admin' element={<AdminPanel/>}>

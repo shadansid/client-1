@@ -77,7 +77,7 @@ setInterval(()=>{
 },3000)
 
 if(validemail && validpass){
-  fetch('http://64.227.140.80/api/adduser', {
+  fetch('/adduser', {
     method: 'POST',
     body:JSON.stringify(formdata),
     headers: {
@@ -169,7 +169,7 @@ const handleChangePass = (e) =>{
   
     <>
     <div className="Registration" style={{ 
-      backgroundImage: `url("C:/Users/Danish Khan/Documents/Krypt/client/public/bg/1.jpg")` 
+      backgroundImage: `url("http://localhost:8800/static/images/lbg.jpeg")` 
     }}>
         
         

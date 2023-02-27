@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react'
 import {Container, Typography, Toolbar,IconButton, Button,Badge, Box} from '@mui/material'
-import { Diversity1 } from '@mui/icons-material';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import LoginIcon from '@mui/icons-material/Login';
@@ -67,132 +66,44 @@ useEffect(() => {
     return (
 
 <>
-      {isLoggedIn?<UserHeader/> : 
-
-<div>
-
-
-{toggle?<Box id="toggle" sx={{height:'100vh' , width:'350px' , backgroundColor:"#F5F9FC" , position:'absolute' , marginTop:'0px' , left:0 , zIndex:2, boxShadow:'2px -1px 21px 0px #693297'  , transitionDelay:'1s'}}>
-
-
-<Container style={{display:"flex", justifyContent:"space-between", padding:'20px'}}>  <Typography  style={{background: `linear-gradient(to right, #30CFD0 0%, #330867 100%)`, 
-  '-webkit-background-clip': 'text',
-  fontSize:'30px',
-  fontWeight:700,
-  '-webkit-text-fill-color': 'transparent'}}>BCEX</Typography>  <Button sx={{backgroundColor:'white',border:'1px solid' , color:'#1976D2',fontWeight:800 ,"&:hover":{backgroundColor:'#F5F9FC'} }} onClick={hidetoggle}> <KeyboardDoubleArrowLeftOutlinedIcon/></Button> </Container>
-
-<Container>
-
-
-<Box sx={{padding:'10px' , "&:hover":{backgroundColor : 'white'}}}>
-<Link style={{textDecoration:'none', color:'#1976D2' , fontSize:'20px' ,padding:'10px' , fontWeight:200}} to='/'>Home</Link>
-</Box>
-
-<Box sx={{padding:'10px' , "&:hover":{backgroundColor : 'white'}}}>
-<Link style={{textDecoration:'none', color:'#1976D2' , fontSize:'20px' ,padding:'10px'}} to='/trade'>Marketplace</Link>
-</Box>
-
-
-<Box sx={{padding:'10px' , "&:hover":{backgroundColor : 'white'}}}>
-<Link style={{textDecoration:'none', color:'#1976D2' , fontSize:'20px' , padding:'10px'}} to='/trade'>Trade</Link>
-</Box>
-
-<Box sx={{padding:'10px' , "&:hover":{backgroundColor : 'white'}}}>
-<Link style={{textDecoration:'none', color:'#1976D2' , fontSize:'20px' , padding:'10px'}} to='/'>NFT</Link>
-</Box>
-
-<Box sx={{padding:'10px' , "&:hover":{backgroundColor : 'white'}}}>
-<Link style={{textDecoration:'none', color:'#1976D2' , fontSize:'20px', padding:'10px'}} to='/registration'>Apply For Listing</Link>
-</Box>
-
-<Box sx={{padding:'10px' , "&:hover":{backgroundColor : 'white'}}}>
-<Link style={{textDecoration:'none', color:'#1976D2' , fontSize:'20px', padding:'10px'}} to='/login'>Login</Link>
-</Box>
-
-</Container>
-
-
-
-</Box>:null}
-
-{/* ===================================================================================== */}
-
-
-<Container sx={{display:'flex', justifyContent:'center' }} >
-
-  <Container  maxWidth="xl" style={{backgroundColor:'#0B0917' ,  
-  // boxShadow:'2px -1px 21px 0px #693297' ,
-   display:"flex" , alignItems:"center", position:'fixed', zIndex:'20'}}>
-
+  <Container sx={{display:'flex', alignItems:'center' , justifyContent:'center' , height:'10vh'}}>
   
-<Toolbar sx={{display:'flex', gap:'20px', width:'100%'}}>
+        <div  style={{width:"50%"}}><img src="http://localhost:8800/static/images/logo.png" height="45px" width="110px" alt="" /></div>
 
-<ToggleButton onClick={togglebtn} value="justify" key="justify" style={{border:'none' , padding:'2px', marginTop:'5px'}} sx={{display:{xs:'block', sm:'none'}}}>
-      <FormatAlignJustifyIcon style={{color:'#331E73'}} />
-    </ToggleButton>
-
-
-<Typography  style={{
-//  `linear-gradient(to right, #30CFD0 0%, #330867 100%)`
-
-  // '-webkit-background-clip': 'text',
-  color:'#5661FF',
-  fontSize:'22px',
-  fontWeight:700,
- 
-  // '-webkit-text-fill-color': 'transparent'
-  }}>BCEX</Typography>
-
-{/* <Container ></Container> */}
-
-<Container  style={{alignItems:'center', justifyContent:'space-around' , flexBasis:'100%'}} sx={{display:{xs:'none', sm:'flex'}}}>
-
-
-<Typography>
-<Link style={{textDecoration:'none', color:'#ffffff' , fontSize:'16px' ,padding:'10px' , fontWeight:200}} to='/'>Home</Link>
+        <div style={{display:'flex', fontColor:'grey',alignItems:'center',width:"50%", height:'50px' , justifyContent:'space-around'}}> 
+         
+        
+        <Typography >
+<Link to='/trade' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'16px' , padding:'10px'}}>Trade</IconButton></Link>
 </Typography>
 
-<Typography>
-<Link style={{textDecoration:'none', color:'#ffffff' , fontSize:'16px' ,padding:'10px'}} to='/trade'>Marketplace</Link>
+<Typography >
+<Link to='/login' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'16px' , padding:'10px'}}>Login</IconButton></Link>
+</Typography>
+
+<Typography >
+<Link to='/registration' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'16px' , padding:'10px'}}>Sign Up</IconButton></Link>
 </Typography>
 
 
 <Typography >
-<Link to='/trade' style={{textDecoration:'none'}}><IconButton sx={{color:'#ffffff' , fontSize:'16px' , padding:'10px'}}><MonetizationOnOutlinedIcon/>&nbsp;Trade</IconButton></Link>
+<Link to='' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'16px' , padding:'10px'}}><DarkModeOutlinedIcon/>&nbsp;Dark</IconButton></Link>
 </Typography>
 
-<Typography>
-<Link style={{textDecoration:'none', color:'#ffffff' , fontSize:'16px' , padding:'10px'}} to='/'>NFT</Link>
+
+
+<Typography >
+<Link to='' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'16px' , padding:'10px'}}>ENG</IconButton></Link>
 </Typography>
 
-<Typography>
-<Link style={{textDecoration:'none', color:'#ffffff' , fontSize:'16px', padding:'10px'}} to='/registration'> Apply For Listing</Link>
-</Typography>
-
-{/* <Typography >
-<Link style={{textDecoration:'none', color:'#ffffff' , fontSize:'16px', padding:'10px'}} to='/login'>Login</Link>
-</Typography> */}
-
-</Container>
-
-<Container style={{display:'flex',justifyContent:'end', color:'#ffffff',gap:'14px', alignItems:'center'}}>
-
-<Link to='/registration' style={{textDecoration:'none'}}><IconButton sx={{color:'#ffffff' , fontSize:'16px' , padding:'10px'}}><LoginIcon/>&nbsp;Sign up</IconButton></Link>
-
-  <IconButton><Link style={{textDecoration:'none', color:'#ffffff' ,backgroundColor:'#1976D2', fontSize:'16px', padding:'10px'}} to='/login'>Login</Link></IconButton>
-    <IconButton sx={{ color:'#ffffff'}}><DarkModeOutlinedIcon sx={{ color:'#ffffff'}} /></IconButton>
-    <IconButton sx={{ color:'#ffffff', fontSize:'16px'}}>INR</IconButton>
-    
-</Container>
 
 
-</Toolbar>
 
-</Container>
+        </div>
 
-</Container>
+   
 
-</div>}
+  </Container>
 
 </>
 

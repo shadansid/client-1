@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Button,Container} from '@mui/material'
 
 const AirdropContest = () => {
+
+  const [redeem, setRedeem] = useState(0)
+  const showRedeem = () => {
+      setRedeem(1)
+  }
+  
+
+  const redeemCoins = () => {
+    
+      alert("Coin credit....")
+
+  }
+ 
+ 
   return (
     <>
     <Container sx={{height:'100vh'}} >
@@ -21,7 +35,12 @@ fontWeight:600,
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias vero odit, laudantium repudiandae at perspiciatis repellat itaque. Dignissimos vitae hic nihil, architecto quidem quam necessitatibus temporibus dicta ducimus veniam, sit alias pariatur eligendi aliquam beatae nam quasi nesciunt illo dolorem eum nulla adipisci aperiam ipsam! Quos dolorem neque omnis in commodi nesciunt minus, voluptates quae earum voluptatem fuga suscipit inventore ea rem, quia atque? Hic veritatis quidem voluptates minus rerum nostrum ea quam amet. Numquam nam nisi ea quos sint tenetur ipsum laudantium, fugiat illum dignissimos, laboriosam asperiores eum minima deserunt nihil veritatis cupiditate. Laborum voluptatibus doloribus rem aliquid? Odio perspiciatis facilis, saepe doloribus debitis error iste minus ad earum, reiciendis esse dolores eos voluptas ex accusamus tenetur omnis aspernatur!</p>
 
 </p>
-<Button variant='contained' sx={{backgroundColor:' #30CFD0 '}}>Share on WhatsApp</Button>
+<a style={{textDecoration:'none', color:'white'}} href="https://api.whatsapp.com/send?phone=+919810946956&text=Join BCEX using this link : https://bcex.com/newuser?!" target="_blank">
+        
+        { redeem?<Button onClick={redeemCoins} variant="contained">Redeem Coins</Button>:<></>}
+        { redeem?<></>:<Button onClick={showRedeem} variant="contained">Share</Button>}
+</a>
+  
 </Container>
 
     

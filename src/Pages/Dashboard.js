@@ -63,7 +63,7 @@ const Transaction = ()=>{
 
     useEffect(()=>{
 
-        axios.get('http://64.227.140.80/api/checklogin')
+        axios.get('/checklogin')
         .then(function (response) {
            
             setLogin(response.data.status);
@@ -84,7 +84,7 @@ const Transaction = ()=>{
     return (
    
          <>
-         <div>{isLoggedIn}</div>
+        
          
           {isLoggedIn && <div>
 

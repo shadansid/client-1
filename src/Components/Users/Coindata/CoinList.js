@@ -17,10 +17,10 @@ const showcoin = ()=>{
 
   // console.log(props.symbol);
   // context.dispatcher({type:"update",payload:props.symbol })
-  context.dispatcher({type:"update",payload:{symbol :props.symbol, custom:props.custom, Cprice:props.Cprice} })
+  context.dispatcher({type:"update",payload:{symbol :props.symbol, custom:props.custom, Cprice:props.Cprice,price:props.price} })
   // console.log("jdhuuibuibui")
   // setsymboldata(props.symbol)
-  // console.log("this is state c" + symboldata)
+  console.log("this is state c " + props.price +  "" + props.symbol)
 
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { TextField ,Button} from '@mui/material'
-import { Box } from '@mui/system';
+import { TextField ,Button,IconButton} from '@mui/material'
+import { Box,Container} from '@mui/system';
+import User from '@mui/icons-material/AdminPanelSettingsOutlined';
 import axios from 'axios'
 
 const UploadID = () => {
@@ -31,7 +32,7 @@ console.log(formdata)
 
     axios({
   method: 'post',
-  url: 'http://64.227.140.80/api/userkyc',
+  url: '/userkyc',
   
   // data: JSON.stringify({
   //   name: name,
@@ -60,19 +61,44 @@ console.log(formdata)
     <>
     <Box sx={{display:'flex', flexDirection:'column' , justifyContent:'space-around' , alignItems:'center', padding:'80px'}}>
 
-<div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary"  size="small" id="name" label="Full Name" variant="outlined" focused /></div>
-<div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary"  size="small" id="adhar" label="AdharCard Number" variant="outlined" focused /></div>
-<div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary" size="small" id="phone" label="Phone Number" variant="outlined" focused /></div>
-<div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary"  size="small" id="pancard" label="PAN Number" variant="outlined" focused />
+        {/* <div style={{ margin: '12px' }}><TextField sx={{ input: { color: "#363C4E" } }} color="primary" size="small" id="" label="Full Name" variant="outlined" focused /></div>
+         */}
+    <div><IconButton><User sx={{color:'#EA661C' , height:'80px' , width:'80px'}} />  <Container sx={{color:'white', fontSize:'22px', paddingTop:'10px'}}>Complete Your KYC </Container></IconButton></div>
+
+        <div>
+<input type="text" id="name" placeholder={"Full Name"}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
 </div>
+
+{/* 
+        <div style={{ margin: '12px' }}><TextField sx={{ input: { color: "#363C4E" } }} color="primary" size="small" id="adhar" label="AdharCard Number" variant="outlined" focused /></div> */}
+                <div>
+<input type="number" id="adhar" placeholder={"Adhar Number"}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+</div>
+
+        {/* <div style={{ margin: '12px' }}><TextField sx={{ input: { color: "#363C4E" } }} color="primary" size="small" id="phone" label="Phone Number" variant="outlined" focused /></div> */}
+        
+        <div>
+<input type="number" id="phone" placeholder={"Phone No."}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+        </div>
+        
+{/* <div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary"  size="small" id="pancard" label="PAN Number" variant="outlined" focused />
+        </div> */}
+        
+        <div>
+<input type="text" id="pancard" placeholder={"PanCard"}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+        </div>
   
-<div style={{margin:'12px'}}> <Button size="small" variant="contained" component="label">
+        
+        <div style={{display:'flex'}}>
+
+      
+<div style={{margin:'12px'}}> <Button sx={{backgroundColor:'#EA661C'}} size="small" variant="contained" component="label">
   Upload ID
   <input id='img' hidden accept="image/*" onChange={(e) => setimage(e.target.files[0])} multiple type="file" />
 </Button></div>
     
     
-<div style={{margin:'12px', display:'flex'}}><Button size="small" onClick={submit} variant="contained" component="label">Submit</Button></div>
+<div style={{margin:'12px', display:'flex'}}><Button sx={{backgroundColor:'#EA661C'}} size="small" onClick={submit} variant="contained" component="label">Submit</Button></div>  </div>
     </Box>
     </>
 

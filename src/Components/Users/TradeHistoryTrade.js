@@ -6,9 +6,10 @@ const TradeHistoryTrade = () => {
     const [tradedata,settradedata]  = useState(0)
 
     useEffect(()=>{
-      const url = "http://64.227.140.80/api/showtrade";
+      const url = "/showtrade";
       axios.get(url, config)
-      .then(res=>{ console.log(res.data)
+      .then(res=>{ 
+        // console.log(res.data)
       settradedata(res.data)
       
       })

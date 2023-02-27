@@ -14,7 +14,7 @@ const Showwallet = () => {
       }
     }
    
-    const url = "http://64.227.140.80/api/showwallet";
+    const url = "/showwallet";
   
   
     axios.get(url, config)
@@ -35,6 +35,10 @@ const Showwallet = () => {
     
     })
     // .catch(err=> console.log(err))
+
+
+
+//  axios.get('https://api.binance.com/api/v3/ticker/price?symbol=')
 
 
    
@@ -71,15 +75,15 @@ console.log("this is wallet data "+ walletdata.quantity)
     height: '8vh' , color:'white'}}>Wallet Balance</Typography></div>
 <div style={{fontSize:'25px',background: '#26A17B',
     padding: '25px',
-    color: 'white'}}>{total && "Total Amount ≈" + "$" + total*81.61}</div>
+    color: 'white'}}>{total && "Total Amount ≈" + "$" + "------"}</div>
 
 {walletdata && walletdata.map((ele)=>{
 
 return <div style={{display:'flex', alignItems:'center', justifyContent:'space-around' , padding:'20px'}}>
 {/* {ele.type== 'credit'? :} */}
-<div style={{width:"20%"}}><img src={`http://64.227.140.80/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`} alt=""  height="20px" width="20px"/></div>
+<div style={{width:"20%"}}><img src={`http://localhost:8800/static/images/coinimage/${ele.currency.toUpperCase()}.png`} alt=""  height="20px" width="20px"/></div>
 <div style={{color:'#7D8794', fontSize:'13px', width:"30%"}}>{(ele.currency).toUpperCase()}</div>
-<div style={{color:'#7D8794', fontSize:'13px',width:"30%"}}>{ele.quantity}</div>
+<div style={{color:'#7D8794', fontSize:'13px',width:"30%"}}>{ele.quantity}&nbsp;{ele.currency.toUpperCase()}</div>
 <div style={{width:"20%"}}><Button>Widthraw</Button></div>
 
 

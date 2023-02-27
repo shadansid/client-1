@@ -47,13 +47,13 @@ const hidetoggle = () =>{
 
   return (
      <> {isLoggedIn && 
-     <div>
+     <div style={{backgroundColor:'#171B26'}}>
   <UserHeader/>
   <Container sx={{height:'8vh'}}></Container>
  <div className="userpanel">
 <Container sx={{width:'300px'}}></Container>
 
- <Container sx={{display:{xs:'none', sm:'block' , position:'fixed'}}} maxWidth="xl" style={{width:'300px', backgroundColor:'#171B26', height:'100vh' , borderRight:'1px solid grey'}}>
+ <Container sx={{display:{xs:'none', sm:'block' , position:'fixed'}}} maxWidth="xl" style={{width:'300px', backgroundColor:'#171B26', height:'100vh' , borderRight:'1px solid #2A2F3F'}}>
    
 
    

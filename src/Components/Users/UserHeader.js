@@ -41,7 +41,7 @@ const UserHeader = () => {
 <>
 
 {/* <Container sx={{height:'14px'}}></Container> */}
-<Container maxWidth="xl" style={{backgroundColor:'#171B26' , zIndex:'5',position:'fixed', borderBottom:'1px solid grey'}} >
+<Container maxWidth="xl" style={{backgroundColor:'#171B26' , zIndex:'5',position:'fixed', borderBottom:'1px solid #2A2F3F'}} >
   
 
   <Container maxWidth="xl" style={{}}>

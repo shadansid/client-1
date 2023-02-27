@@ -9,7 +9,7 @@ const Footer = () => {
    <footer style={{backgroundColor:'#0B0917'}}>
 
    
-  <div class="footer" style={{ color:'white'}}>
+  <div class="footer" style={{ color:'#2A2A2D'}}>
     
     
     
@@ -18,7 +18,7 @@ const Footer = () => {
 
 
     <div class="col">
-        <h4>Company</h4>
+        <h4 style={{ color:'grey', fontSize:'22px'}}>Company</h4>
         <p>About us</p>
         <p>Need Help?</p>
         <p>Crypto Exchange</p>
@@ -27,7 +27,7 @@ const Footer = () => {
   
 
     <div class="col">
-        <h4>Trading</h4>
+        <h4 style={{ color:'grey', fontSize:'22px'}}>Trading</h4>
         <p>Spot Wallet</p>
         <p>Margin Wallet</p>
         <p>Future Trading</p>
@@ -35,14 +35,14 @@ const Footer = () => {
 
 
     <div class="col">
-        <h4>Apply For Listing</h4>
+        <h4 style={{ color:'grey', fontSize:'22px'}}>Listing</h4>
         <p>Create New Token</p>
         <p>Earn with us</p>
         <p>Others</p>
         
     </div>
     <div class="col">
-        <h4>Technical Analysis</h4>
+        <h4 style={{ color:'grey', fontSize:'22px'}}>Analysis</h4>
         <p>CandleStick Chart</p>
         <p>Need help</p>
         <p>Tutorial</p>

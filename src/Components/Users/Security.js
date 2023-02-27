@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Google2FA from './Google2FA'
 const Security = () => {
   return (
     <div>   <div style={{height:'100vh'}}>
@@ -7,7 +7,7 @@ const Security = () => {
     
     <div style={{fontSize:'20px',color:'white',padding:'20px'}}>
       
-       Work is in progress...
+    <Google2FA/>
       </div>
       
     

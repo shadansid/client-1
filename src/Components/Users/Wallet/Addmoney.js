@@ -13,7 +13,7 @@ const addmn = ()=>{
 let amountbox = document.getElementById('amountbox').value;
 
 
-axios.post('http://64.227.140.80/api/addmoney', {
+axios.post('/addmoney', {
     amount:amountbox,
     currency:age
   },{

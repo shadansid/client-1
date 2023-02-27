@@ -11,7 +11,7 @@ function CoinListBox({coins}) {
   const getdata = ()=>{
   
   
-  axios("http://64.227.140.80/api/getcoin").then(res=>res.data).then((data)=>{
+  axios("/getcoin").then(res=>res.data).then((data)=>{
 
     // console.log(data)
     setcoin(data)
@@ -39,7 +39,7 @@ function CoinListBox({coins}) {
               <SearchIcon />
             </Box> */}
 
-            <Box> <div style={{display:'flex', alignItems:'center',gap:'10px'}}><input type="text" placeholder='Explore New Coins...'  style={{height:"15px", backgroundColor:'transparent' , border:'1px solid grey', padding:'15px' , margin:'10px'}}   /> <SearchIcon sx={{color:'#3468D1'}} /></div></Box>
+            <Box> <div style={{display:'flex', alignItems:'center',gap:'10px' , justifyContent:'center'}}><input type="text" placeholder='Explore New Coins...'  style={{height:"15px", backgroundColor:'transparent' , border:'1px solid grey', padding:'15px' , margin:'10px'}}   /> <SearchIcon sx={{color:'#3468D1'}} /></div></Box>
            
          
   {coin.map((element)=>{
